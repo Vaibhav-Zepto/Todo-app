@@ -23,15 +23,28 @@ code {
   justify-content: space-between;
   width: 30rem;
 }
-.taskEntry{
+.taskContainer1{
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 30rem;
+  border-width: 1rem;
+  border-color: #A020F0;
+}
+.taskContainer2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30rem;
+  border-width: 1rem;
+  border-color: #A020F0;
 }
 .tasks{
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 30rem;
+}
+.taskEntry{
+  margin-top: 2rem;
 }

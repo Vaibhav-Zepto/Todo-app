@@ -1,33 +1,28 @@
 import {useState} from 'react'; 
+import Task from "./Task"
+import Entry from './entry';
 function App() {
-  const [task,setTask]= useState();
   const [list,setList]= useState([]);
-  let nextId=0;
-  const addTask = (task)=>{
-    if(task!==''){
-      nextId++;
-      setList([...list, {id:nextId,data:task}]);
-    }
-  }
   const removeTask = (id)=>{
     setList(
       list.filter(task=> task.id!==id)
     )
   }
+  const changeStatus = (id)=>{
+    for(var i=0;i<list.length;i++){
+      if(list[i].id===id){
+        list[i].status=!list[i.status]
+      }
+    }
+  }
   return (
     <div className="App">
-      <div className="add">
-        <input className="entry" value={task} onChange={(e)=>setTask(e.target.value)}></input>
-        <button className="addButton"onClick={()=>addTask(task)}>add tasks</button>
-      </div>
+      <Entry list={list} setList={setList}/>
       <div className="tasks">
         {
           list.map((item)=>{
             return(
-              <div className='taskEntry' key={item.id}>
-                <div className='taskData'>{item.data}</div>
-                <button onClick={()=>removeTask(item.id)}>remove task</button>
-              </div>
+              <Task item={item} changeStatus={changeStatus} removeTask={removeTask}/>
             )
           })
         }
