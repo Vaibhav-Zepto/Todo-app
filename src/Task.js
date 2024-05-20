@@ -13,12 +13,12 @@ const Task = (props) => {
     <div className='taskEntry'>
       <div className='taskContainer1' style={{display: visiblity?"flex":"none", alignItems:"center"}}>
         <div style={{width:"20rem", display:"flex", alignItems:"center"}}>
-          <input type="checkbox" onClick={()=>props.changeStatus(props.item.id)}/>
-          <div className='taskData' style={{textDecoration: props.item.isLeft?"none":"line-through",display:"flex", alignItems:"center"}}>{props.item.data}</div>
+          <input className="checkbox" type="checkbox" onClick={()=>props.changeStatus(props.item.id)}/>
+          <div className='taskData' style={{textDecoration: props.item.isLeft?"none":"line-through",display:"flex", alignItems:"center", color:"#FFFFFF"}}>{props.item.data}</div>
         </div>
         <div style={{display:"flex", alignItems:"center"}}>
-          <img src={editIc} alt='' style={{display: visiblity&&props.item.isLeft?"flex":"none", height:"1rem", width:"1rem"}} onClick={()=>setVisiblity(false)}></img>
-          <img src={DeleteIc} alt='' style={{height:"1rem", width:"1rem", marginLeft:".5rem"}}onClick={()=>props.removeTask(props.item.id)}/>
+          <img src={editIc} alt='' style={{display: visiblity&&props.item.isLeft?"flex":"none", height:"1.5rem", width:"1.5rem"}} onClick={()=>setVisiblity(false)}></img>
+          <img src={DeleteIc} alt='' style={{height:"1.5rem", width:"1.5rem", marginLeft:".5rem"}}onClick={()=>props.removeTask(props.item.id)}/>
         </div>
       </div>
       <div className='taskContainer2' style={{display: !visiblity?"flex":"none"}}>
@@ -27,6 +27,7 @@ const Task = (props) => {
           if(task!==''){
             props.item.data=task
             setVisiblity(true)
+            setTask('')
           }
           else{
             alert('please enter a non empty task')

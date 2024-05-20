@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import plusIcon from './plusIcon.svg'
 let nextId=0;
 export default function Entry(props) {
   const [task,setTask]= useState('')
@@ -7,6 +7,7 @@ export default function Entry(props) {
     if(task!==''){
       nextId++;
       props.setList([...props.list, {id:nextId,data:task,isLeft:true}]);
+      setTask('')
     }
     else{
       alert("please add a non empty task")
@@ -15,7 +16,7 @@ export default function Entry(props) {
   return (
     <div className="add">
         <input className="entry" value={task} onChange={(e)=>setTask(e.target.value)}></input>
-        <button className="addButton"onClick={()=>addTask(task)}>add tasks</button>
+        <img src={plusIcon} alt='' className="addButton"onClick={()=>addTask(task)}/>
     </div>
   )
 }
