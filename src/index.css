@@ -48,3 +48,9 @@ code {
 .taskEntry{
   margin-top: 2rem;
 }
+.tracker{
+  margin-bottom: 4rem;
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+}

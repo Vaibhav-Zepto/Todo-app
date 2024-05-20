@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 
 let nextId=0;
 export default function Entry(props) {
-  const [task,setTask]= useState()
+  const [task,setTask]= useState('')
   const addTask = (task)=>{
     if(task!==''){
       nextId++;
-      props.setList([...props.list, {id:nextId,data:task, isLeft:true}]);
+      props.setList([...props.list, {id:nextId,data:task,isLeft:true}]);
     }
     else{
       alert("please add a non empty task")

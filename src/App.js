@@ -9,20 +9,30 @@ function App() {
     )
   }
   const changeStatus = (id)=>{
-    for(var i=0;i<list.length;i++){
-      if(list[i].id===id){
-        list[i].status=!list[i.status]
-      }
-    }
+    setList((list)=>
+      list.map((item)=>
+          item.id===id?{...item,isLeft:!item.isLeft}:item
+      ) 
+    )
   }
+  const done= list.filter(
+    (item)=>item.isLeft===false
+  ).length
+  const total=list.length
   return (
     <div className="App">
+      <div className='header'>
+        <h1 style={{marginBottom:"5rem"}}>Welcome! here are your tasks for the day</h1>
+      </div>
+      <div className='tracker'>
+        tasks done {done}/{total}
+      </div>
       <Entry list={list} setList={setList}/>
       <div className="tasks">
         {
           list.map((item)=>{
             return(
-              <Task item={item} changeStatus={changeStatus} removeTask={removeTask}/>
+              <Task item={item} key={item.id} changeStatus={changeStatus} removeTask={removeTask}/>
             )
           })
         }
