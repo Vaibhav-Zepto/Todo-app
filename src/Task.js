@@ -22,7 +22,7 @@ const Task = (props) => {
         </div>
       </div>
       <div className='taskContainer2' style={{display: !visiblity?"flex":"none"}}>
-        <input className='entry' style={{marginLeft:".5rem"}}value={task} onChange={(e)=>setTask(e.target.value)}></input>
+        <input className='entry' style={{marginLeft:".5rem", height:"1.5rem", width:"20rem"}}value={task} onChange={(e)=>setTask(e.target.value)}></input>
         <button style={{marginRight:".5rem"}}onClick={()=>{
           if(task!==''){
             props.item.data=task
