@@ -27,11 +27,15 @@ code {
   height: 3rem;
 }
 .entry{
-  height: 1.5rem;
-  width: 10rem;
+  height: 2.5rem;
+  width: 28rem;
   background-color: #1f2937;
   border: none;
   color: #FFFFFF;
+}
+.addButton{
+  height: 1.75rem;
+  width: 1.75rem;
 }
 .taskContainer1{
   font-size: 1.5rem;
@@ -54,7 +58,6 @@ code {
   border-radius: .25rem;
 }
 .tasks{
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -63,10 +66,28 @@ code {
   margin-top: 2rem;
 }
 .tracker{
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   width: 30rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: .1rem solid #c2b39a;
+}
+.trackerText{
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+.trackerCount{
   display: flex;
   justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: green;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 2.5rem;
+  margin-right: 2rem;
 }
 .checkbox{
   height: 1.5rem;

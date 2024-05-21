@@ -22,10 +22,15 @@ function App() {
   return (
     <div className="App">
       <div className='header'>
-        <h1 style={{marginBottom:"5rem", color:"#FFFFFF"}}>Welcome! here are your tasks for the day</h1>
+        <h1 style={{marginBottom:"3rem", color:"#FFFFFF"}}>Welcome! here are your tasks for the day</h1>
       </div>
       <div className='tracker' style={{color:"#FFFFFF"}}>
-        tasks done {done}/{total}
+        <div className='trackerText'>
+          Tasks done
+        </div>
+        <div className='trackerCount'>
+          {done}/{total}
+        </div>
       </div>
       <Entry list={list} setList={setList}/>
       <div className="tasks">
