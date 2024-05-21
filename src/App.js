@@ -15,6 +15,14 @@ function App() {
       ) 
     )
   }
+  const addTask = (task)=>{
+    if(task!==''){
+      setList((prev=>[...prev,task]));
+    }
+    else{
+      alert("please add a non empty task")
+    }
+  }
   const done= list.filter(
     (item)=>item.isLeft===false
   ).length
@@ -32,7 +40,7 @@ function App() {
           {done}/{total}
         </div>
       </div>
-      <Entry list={list} setList={setList}/>
+      <Entry addTask={addTask}/>
       <div className="tasks">
         {
           list.map((item)=>{
