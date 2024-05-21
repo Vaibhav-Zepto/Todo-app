@@ -15,7 +15,7 @@ export default function Entry(props) {
   }
   return (
     <div className="add">
-        <input className="entry" value={task} onChange={(e)=>setTask(e.target.value)}></input>
+        <input className="entry" value={task} onChange={(e)=>setTask(e.target.value)} placeholder='Enter your tasks here'></input>
         <img src={plusIcon} alt='' className="addButton"onClick={()=>addTask(task)}/>
     </div>
   )

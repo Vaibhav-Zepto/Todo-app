@@ -18,12 +18,12 @@ const Task = (props) => {
         </div>
         <div style={{display:"flex", alignItems:"center"}}>
           <img src={editIc} alt='' style={{display: visiblity&&props.item.isLeft?"flex":"none", height:"1.5rem", width:"1.5rem"}} onClick={()=>setVisiblity(false)}></img>
-          <img src={DeleteIc} alt='' style={{height:"1.5rem", width:"1.5rem", marginLeft:".5rem"}}onClick={()=>props.removeTask(props.item.id)}/>
+          <img src={DeleteIc} alt='' style={{height:"1.5rem", width:"1.5rem", marginLeft:".5rem",marginRight:".5rem"}}onClick={()=>props.removeTask(props.item.id)}/>
         </div>
       </div>
       <div className='taskContainer2' style={{display: !visiblity?"flex":"none"}}>
-        <input value={task} onChange={(e)=>setTask(e.target.value)}></input>
-        <button onClick={()=>{
+        <input className='entry' style={{marginLeft:".5rem"}}value={task} onChange={(e)=>setTask(e.target.value)}></input>
+        <button style={{marginRight:".5rem"}}onClick={()=>{
           if(task!==''){
             props.item.data=task
             setVisiblity(true)
